@@ -3,13 +3,23 @@
 	<head>
 		<title> C+1 </title>
 	</head>
-	<body style = "background-color: black; color: white;">
-		<div style = "top: 2px; position: fixed; left: 40%;">
-			<h1> <font face = "Franklin Gothic Demi Cond"> Home |
-				Contact |
-				Schedule |
+	<body style = "background-color: navy; color: white;">
+		<div style = "top: 2px; position: fixed; left: 50%; transform: translateX(-50%);">
+			<h1> <font face = "Franklin Gothic Demi Cond"> <a href = "./index.html">Home</a> |
+				<a href = "./Contact.html" target = "_blank">Contact</a> |
+				Schedule a lesson |
 				Online Learning |
 				About us </font> </h1>
 		</div>
+		<hr size = "5" width = "100%" color = "grey">
+		<h1> Learn C++ today! </h1>
+		<br>
+		<button id = "button1" bgcolor = "> Try learning online now </button>
 	</body>
+	<script>
+		const buttonn1 = document.getElementById("button1");
+		buttonn1.addEventListener('click', function() {
+			window.location.assign("Online-learning.html");
+		}
+	</script>
 </html>
