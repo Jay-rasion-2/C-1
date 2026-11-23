@@ -28,7 +28,7 @@
 	<body style = "background-color: navy;" topmargin = "50" text = "white">
 		<div style = "top: 2px; position: fixed; left: 50%; transform: translateX(-50%); margin-top: 0px;">
 			<h5> Level 1! </h5>
-			<hr size = "5" width = "100%" style = "position: fixed; top-margin: -5px;" color = "red">
+			<hr size = "5" width = "100%" style = "position: fixed; margin-top: -5px;" color = "red">
 		</div>
 		<div class = "horizontalparent">
 			<div style = "margin-right: auto;">
@@ -54,10 +54,14 @@
 		<script>
 			const editor = document.getElementById("editor");
 			const count = document.getElementById("counter");
+			const button1 = document.getElementById("button1");
 			editor.addEventListener('input', function() {
 				const text = editor.innerText; /* Get text content */
 				const lineCount = text.split('\n').length; /* Get line count */
 				count.innerText = `Amount of lines: ${lineCount}` /* Display it */
+			} )
+			button1.addEventListener('click', function() {
+				// Write code here
 			} )
 		</script>
 	</body>
