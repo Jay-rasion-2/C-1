@@ -12,8 +12,8 @@
     			border: 1px solid #ccc;
     			font-family: sans-serif;
     			white-space: pre-wrap; /* Preserves line breaks and wraps text */
-				background-color: white;
-				color: black;
+				background-color: black;
+				color: white; /* change text color */
 				margin-left: auto;
 			}
 		</style>
@@ -23,10 +23,12 @@
 			<h5 style = "position: fixed; left: 50%; margin-top: -10px; transform: translateX(50%);"> Level 1! </h5>
 			<hr size = "5" width = "100%" style = "position: fixed; top-margin: -5px;" color = "red">
 		</div>
-		<div id  = "counter" align = "right">
+		<p> Try writing this code, it should provide with a "Hello world" message: </p>
+		<div id  = "counter" style = "margin-left: auto;">
 			Amount of lines: 1
 		</div>
-		<div class = "codebox" contenteditable = "true" id = "editor"> <p> //Write your code here </p> </div>
+		<div class = "codebox" contenteditable = "true" id = "editor" style = "display: inline-block"> <p> //Write your code here </p> </div>
+		<button type = "button" id = "button1"> Check code </button>
 		<script>
 			const editor = document.getElementById("editor");
 			const count = document.getElementById("counter");
