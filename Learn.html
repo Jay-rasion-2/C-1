@@ -4,16 +4,17 @@
 		<title> Learn C++ </title>
 		<style>
 			.codebox {
-			    width: 300px;
-    			height: 150px; /* Fixed height */
-			    overflow-y: scroll; /* Enables vertical scrolling */
+			    width: 400px;
+    			height: 200px; /* Fixed height */
+			    overflow-y: auto; /* Enables vertical scrolling */
     			overflow-x: hidden; /* Hides horizontal scrollbar if needed */
-			    padding: 10px;
+			    padding: 2px;
     			border: 1px solid #ccc;
     			font-family: sans-serif;
     			white-space: pre-wrap; /* Preserves line breaks and wraps text */
 				background-color: white;
 				color: black;
+				margin-left: auto;
 			}
 		</style>
 	</head>
@@ -25,7 +26,7 @@
 		<div id  = "counter" align = "right">
 			Amount of lines: 1
 		</div>
-		<div class = "codebox" contenteditable = "true" id = "editor" align = "right">
+		<div class = "codebox" contenteditable = "true" id = "editor">
 			<p> Type here... </p>
 		</div>
 		<script>
