@@ -11,15 +11,28 @@
 			    padding: 10px;
     			border: 1px solid #ccc;
     			font-family: sans-serif;
-    			white-space: pre-wrap; /* Preserves line breaks and wraps text */
+    			white-space: pre-wrap; /* Preserves line breaks and wraps text */\
+				background-color: white;
 			}
 		</style>
 	</head>
 	<body style = "background-color: navy;" topmargin = "20" text = "white">
 			<h5 style = "position: fixed; left: 50%; margin-top: -10px; transform: translateX(50%);"> Level 1! </h5>
 		<hr size = "5" width = "100%" style = "position: fixed; top-margin: -5px;" color = "red">
-		<div class = "codebox" contenteditable = "true">
+		<div id  = "counter">
+			Amount of lines: 1
+		</div>
+		<div class = "codebox" contenteditable = "true" id = "editor">
 			<p> Type here... </p>
 		</div>
+		<script>
+			const editor = document.getElementById("editor");
+			const count = document.getElementById("counter");
+			editor.addEventListener('input', function() {
+				const text = editor.innerText; /* Get text content */
+				const LineCount = text.split('\n').length; /* Get line count */
+				count.innerText = `Amount of lines: ${lineCount}` /* Display it */
+			} )
+		</script>
 	</body>
 </html>
