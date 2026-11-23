@@ -13,7 +13,7 @@
     			font-family: sans-serif;
     			white-space: pre-wrap; /* Preserves line breaks and wraps text */
 				background-color: white;
-				text-color: black;
+				color: black;
 			}
 		</style>
 	</head>
@@ -31,7 +31,7 @@
 			const count = document.getElementById("counter");
 			editor.addEventListener('input', function() {
 				const text = editor.innerText; /* Get text content */
-				const LineCount = text.split('\n').length; /* Get line count */
+				const lineCount = text.split('\n').length; /* Get line count */
 				count.innerText = `Amount of lines: ${lineCount}` /* Display it */
 			} )
 		</script>
