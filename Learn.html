@@ -51,14 +51,16 @@
 			</div>
 		</div>
 		<div class = "horizontalparent">
-		<button type = "button" id = "button1" style = "margin-right: auto;"> Check code </button>
-		<h1 id = "error" style = "margin: 0 auto;"></h1>
+			<button type = "button" id = "button1" style = "margin-right: auto;"> Check code </button>
+			<h1 id = "error" style = "margin: 0 auto;"></h1>
+			<button type = "button" id = "button2" style = "margin-left: auto;"> Next Level </button>
 		</div>
 		<script>
 			const editor = document.getElementById("editor");
 			const count = document.getElementById("counter");
 			const button1 = document.getElementById("button1");
 			const error = document.getElementById("error");
+			const button2 = document.getElementById("button2");
 			editor.addEventListener('input', function() {
 				const text = editor.innerText; /* Get text content */
 				const lineCount = text.split('\n').length; /* Get line count */
@@ -67,9 +69,7 @@
 			button1.addEventListener('click', function() {
     const allCode = editor.innerText.trimEnd();
     const lines = allCode.split('\n');
-
     let correct = true;
-
     for (let i = 0; i < lines.length; i++) {
         switch (i) {
             case 0:
@@ -96,11 +96,15 @@
     if (correct && lines.length === 6) {
         error.style.color = "green";
         error.textContent = "Good job! You did it right!";
+		button2.style.visibility = "true";
     } else {
         error.style.color = "red";
         error.textContent = "Something went wrong. Try revising your code";
     }
 });
+			function nextlevel() {
+				window.location.assign("./learn2.html");
+			}
 		</script>
 	</body>
 </html>
