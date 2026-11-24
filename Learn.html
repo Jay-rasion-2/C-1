@@ -34,7 +34,7 @@
 			<div style = "margin-right: auto;">
 				<p align = "left"> Try writing this code, it should provide with a "Hello world" message: <br>
 					<font color = "red"> <b>
-						#include iostream <br>
+						#include &gt;iostream&gt; <br>
 						using namespace std; <br>
 						int main() { <br>
 						&nbsp;&nbsp;&nbsp;&nbsp;	cout << "Hello world"; <br>
@@ -50,18 +50,38 @@
 				<div class = "codebox" contenteditable = "true" id = "editor"> <p> //Write your code here </p> </div>
 			</div>
 		</div>
-		<button type = "button" id = "button1"> Check code </button>
+		<div class = "horizontalparent">
+		<button type = "button" id = "button1" style = "margin-right: auto;"> Check code </button>
+		<h1 id = "error" style = "margin: 0 auto;"></h1>
+		</div>
 		<script>
 			const editor = document.getElementById("editor");
 			const count = document.getElementById("counter");
 			const button1 = document.getElementById("button1");
+			const error = document.getElementById("error");
 			editor.addEventListener('input', function() {
 				const text = editor.innerText; /* Get text content */
 				const lineCount = text.split('\n').length; /* Get line count */
 				count.innerText = `Amount of lines: ${lineCount}` /* Display it */
 			} )
 			button1.addEventListener('click', function() {
-				// Write code here
+				// Check code
+				const allCode = editor.innerText.trimEnd();
+    			const lines = allCode.split('\n');
+				for (const i = 1; i <= lines.length; i++) {
+					switch (i) {
+						case 1:
+							if (lines[i] == "#include <iostream>") {
+								error.style.color = "green";
+								error.textContent = "Good job! You did it right!";
+							} else {
+								error.style.color = "red";
+								error.textContent = "Something went wrong. Try revising your code";
+							}
+							break;
+						default:
+							break;
+				}
 			} )
 		</script>
 	</body>
