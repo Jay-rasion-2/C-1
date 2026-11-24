@@ -65,24 +65,42 @@
 				count.innerText = `Amount of lines: ${lineCount}` /* Display it */
 			} )
 			button1.addEventListener('click', function() {
-				// Check code
-				const allCode = editor.innerText.trimEnd();
-    			const lines = allCode.split('\n');
-				for (const i = 1; i <= lines.length; i++) {
-					switch (i) {
-						case 1:
-							if (lines[i] == "#include <iostream>") {
-								error.style.color = "green";
-								error.textContent = "Good job! You did it right!";
-							} else {
-								error.style.color = "red";
-								error.textContent = "Something went wrong. Try revising your code";
-							}
-							break;
-						default:
-							break;
-					}
-				} )
+    const allCode = editor.innerText.trimEnd();
+    const lines = allCode.split('\n');
+
+    let correct = true;
+
+    for (let i = 0; i < lines.length; i++) {
+        switch (i) {
+            case 0:
+                if (lines[i] !== "#include <iostream>") correct = false;
+                break;
+            case 1:
+                if (lines[i] !== "using namespace std;") correct = false;
+                break;
+            case 2:
+                if (lines[i] !== "int main() {") correct = false;
+                break;
+            case 3:
+                if (lines[i].trim() !== 'cout << "Hello world";') correct = false;
+                break;
+            case 4:
+                if (lines[i].trim() !== "return 0;") correct = false;
+                break;
+            case 5:
+                if (lines[i] !== "}") correct = false;
+                break;
+        }
+    }
+
+    if (correct && lines.length === 6) {
+        error.style.color = "green";
+        error.textContent = "Good job! You did it right!";
+    } else {
+        error.style.color = "red";
+        error.textContent = "Something went wrong. Try revising your code";
+    }
+});
 		</script>
 	</body>
 </html>
